@@ -1,48 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 11:50:56 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/20 16:59:15 by davgarc4         ###   ########.fr       */
+/*   Created: 2026/01/20 16:44:02 by davgarc4          #+#    #+#             */
+/*   Updated: 2026/01/20 16:57:38 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <fcntl.h>
 #include "libft.h"
-#include <stdio.h>
 
-void	funcion(unsigned int i, char *c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (i % 2 == 1)
-	{
-		*c = ft_toupper(*c);
-	}
-	else
-		*c = ft_tolower(*c);
-}
+	char	*s;
+	int		size;
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	unsigned int	i;
-	size_t			size;
-
-	i = 0;
+	s = ft_itoa(n);
 	size = ft_strlen(s);
-	while (s[i] != '\0')
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	write(fd, s, size);
 }
 /*
 int	main(void)
 {
-	char	s[] = "Hola mundo";
-
-	ft_striteri(s, funcion);
-	printf("%s\n", s);
+	int	fd;
+	int	n;
+	
+	n = 22;
+	fd = open("tmp.txt", O_WRONLY | O_CREAT, 00755);
+	ft_putnbr_fd(n, fd);
+	close(fd);
 	return (0);
 }
 */

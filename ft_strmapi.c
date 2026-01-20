@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 10:39:53 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/20 11:50:26 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:32:57 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char funcion(unsigned int i, char c)
+char	funcion(unsigned int i, char c)
 {
 	if (i % 2 == 1)
 	{
@@ -43,6 +43,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ptr[i] = f(i, s[i]);
 		i++;
 	}
+	ptr[i] = 0;
 	return (ptr);
 }
 /*
