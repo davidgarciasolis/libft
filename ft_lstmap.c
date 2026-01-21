@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 12:10:55 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 10:31:02 by davgarc4         ###   ########.fr       */
+/*   Created: 2026/01/21 16:29:42 by davgarc4          #+#    #+#             */
+/*   Updated: 2026/01/21 16:51:21 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
+#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putchar_fd(char c, int fd)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	write(fd, &c, 1);
+	t_list	new_lst;
+	t_list	aux;
+	t_list	tmp;
+	
+	new_list = mallow(t_list *);
+	aux = lst;
+	while (aux)
+	{
+		tmp = aux->next;
+		aux->content = f(aux->content);
+		aux = tmp;
+	}
+	return (new_lst);
 }
-/*
-int	main(void)
-{
-	int	fd;
-
-	fd = open("tmp.txt", O_WRONLY | O_CREAT, 00755);
-	ft_putchar_fd('C', fd);
-	close(fd);
-	return (0);
-}
-*/

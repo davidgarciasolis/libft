@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 12:10:55 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 10:31:02 by davgarc4         ###   ########.fr       */
+/*   Created: 2026/01/21 10:20:47 by davgarc4          #+#    #+#             */
+/*   Updated: 2026/01/21 13:12:02 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
+#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	write(fd, &c, 1);
+	t_list	*nodo;
+
+	nodo = malloc(sizeof(t_list));
+	nodo->content = content;
+	nodo->next = NULL;
+	return (nodo);
 }
 /*
 int	main(void)
 {
-	int	fd;
+	char	content[] = "Hola mundo";
+	t_list	*nodo;
 
-	fd = open("tmp.txt", O_WRONLY | O_CREAT, 00755);
-	ft_putchar_fd('C', fd);
-	close(fd);
+	nodo = ft_lstnew(content);
+	printf("%s\n", (char *)nodo->content);
 	return (0);
 }
 */
