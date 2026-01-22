@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:48:34 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 15:02:20 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:33:49 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 	{
-		return (NULL);
+		return (malloc(0));
 	}
 	ptr = malloc(nmemb * size);
 	if (!ptr)

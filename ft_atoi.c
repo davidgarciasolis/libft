@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:08:28 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 15:01:52 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 15:12:35 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (ft_strnstr((char *)&nptr[i], "-2147483648", 11) != NULL)
 		return (-2147483648);
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		signo = -1;
+		if (nptr[i] == '-')
+			signo = -1;
 		i++;
 	}
-	while (nptr[i] > '0' && nptr[i] < '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result *= 10;
 		result += nptr[i] - '0';

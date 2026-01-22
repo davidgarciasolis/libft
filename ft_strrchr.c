@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:18:01 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 15:07:08 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:34:54 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,34 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
+	char	letter;
 
+	letter = (char)c;
 	i = ft_strlen(s);
-	while (i--)
+	while (i)
 	{
-		if (s[i] == c)
+		if (s[i] == letter)
 		{
 			return ((char *)&s[i]);
-			s--;
 		}
+		i--;
 	}
+	if (s[i] == letter)
+		{
+			return ((char *)&s[i]);
+		}
 	return (NULL);
 }
 /*
 int	main(void)
 {
-	const char s[] = "Hola mundo";
+	const char s[] = "teste";
 	char	*p;
 	int	c;
 
-	c = 's';
+	c = '\0';
 	p = ft_strrchr(s, c);
-	printf("%s\n", p);
+	printf("%p\n", p);
 	return (0);
 }
 */

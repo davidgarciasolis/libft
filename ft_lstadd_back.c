@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 13:13:25 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 10:54:17 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:47:59 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 	
+	if (*lst)
+	{
 	last = ft_lstlast(*lst);
 	last->next = new;
 	new->next = NULL;
+	}
 }
 /*
 int	main(void)

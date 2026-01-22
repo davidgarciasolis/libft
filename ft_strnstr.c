@@ -6,12 +6,13 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 12:43:39 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 15:07:02 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 15:06:07 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <bsd/string.h>
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -19,6 +20,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	y;
 
 	x = 0;
+	if (ft_strlen(little) == 0)
+	{
+		return ((char *)big);
+	}
 	while (big[x] && x < len)
 	{
 		y = 0;

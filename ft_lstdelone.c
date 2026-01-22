@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 13:19:33 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 13:32:07 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:26:48 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	free_memory(void *ptr)
+void	free_memory_delone(void *ptr)
 {
 	free(ptr);
 }
@@ -52,7 +52,7 @@ int	main(void)
 	l2 = ft_lstnew(s3);
 	*cabecera = l2;
 	ft_lstadd_front(cabecera, l1);
-	ft_lstdelone(ft_lstlast(*cabecera), free_memory);
+	ft_lstdelone(ft_lstlast(*cabecera), free_memory_delone);
 	printf("%s\n", (char *)(*cabecera)->content);
 	return (0);
 }

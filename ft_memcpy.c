@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:18:55 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 15:03:37 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:29:49 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	i = 0;
-	while (i < n)
+	if (dest || src)
 	{
-		d[i] = s[i];
-		i++;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
 	return (dest);
 }

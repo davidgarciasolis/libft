@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:36:24 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 16:10:09 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:22:55 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	t_list	*ptr;
 
 	i = 0;
-	ptr = lst;
-	while (ptr->next)
+	while (lst)
 	{
-		ptr = ptr->next;
+		lst = lst->next;
 		i++;
 	}
-	i++;
 	return (i);
 }
 /*

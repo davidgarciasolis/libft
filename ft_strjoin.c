@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:05:23 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 16:20:03 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:03:59 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	ptr = malloc(size);
+	if (!ptr)
+		return (NULL);
 	x = 0;
 	y = 0;
 	while (s1[x])

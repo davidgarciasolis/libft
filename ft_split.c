@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:18:10 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/20 18:27:13 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:25:40 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ size_t	stringlen(char const *s, char c)
 	return (i);
 }
 
-void	free_memory(char **ptr, int y)
+void	free_memory_split(char **ptr, int y)
 {
 	while (y)
 		free(ptr[--y]);
@@ -69,7 +69,7 @@ int	duplicate_word(char	**ptr, char const *s, char c)
 		ptr[y] = (char *)malloc(size_word + 1);
 		if (!ptr[y])
 		{
-			free_memory(ptr, y);
+			free_memory_split(ptr, y);
 			return (1);
 		}
 		ft_strlcpy(ptr[y], &s[x], size_word);

@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:39:55 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/19 15:06:51 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:43:43 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (s1[i] && s1[i] == s2[i] && i < n)
+	while (s1[i] && s1[i] == s2[i] && i < n - 1)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 /*
 int	main(void)
