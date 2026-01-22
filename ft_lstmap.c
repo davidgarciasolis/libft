@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:29:42 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 16:51:21 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:55:39 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,40 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	t_list	new_lst;
-	t_list	aux;
-	t_list	tmp;
+	t_list	*new_lst;
+	t_list	*aux;
+	t_list	*tmp;
+	void	*content;
 	
-	new_list = mallow(t_list *);
+	new_lst = malloc(sizeof(t_list *));
+	if(!new_lst)
+		return (NULL);
 	aux = lst;
 	while (aux)
 	{
 		tmp = aux->next;
-		aux->content = f(aux->content);
+		content = f(aux->content);
+		if (content)
+		{
+			del(aux->content);
+		}
+		else
+		{
+			aux = ft_lstnew(content);
+			if (!aux)
+				{
+					ft_lstclear(&new_lst, del);
+					del(content);
+				}
+			ft_lstadd_back(&new_lst, aux);
+		}
 		aux = tmp;
 	}
 	return (new_lst);
 }
+/*
+int	main(void)
+{
+	return (0);
+}
+*/

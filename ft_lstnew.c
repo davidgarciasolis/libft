@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:20:47 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 13:12:02 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:36:50 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*nodo;
 
 	nodo = malloc(sizeof(t_list));
+	if (!nodo)
+		return (NULL);
 	nodo->content = content;
 	nodo->next = NULL;
 	return (nodo);

@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:17:21 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 16:29:09 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:49:41 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		aux = tmp;
 	}
 }
-
+/*
 int	main(void)
 {
 	t_list	**cabecera;
@@ -50,3 +50,4 @@ int	main(void)
 	ft_lstiter(*cabecera, ft_print);
 	return (0);
 }
+*/
