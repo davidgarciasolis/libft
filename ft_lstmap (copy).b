@@ -6,39 +6,47 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:29:42 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/23 15:32:30 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:00:37 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
 	t_list	*new_lst;
+	t_list	*aux;
 	t_list	*tmp;
 	void	*content;
 	
-	if(!lst || !f || !del)
+	if  (!lst || !f || !del)
 		return (NULL);
-	new_lst = NULL;
-	while (lst)
+	new_lst = malloc(sizeof(t_list));
+	if(!new_lst)
+		return (NULL);
+	aux = lst;
+	while (aux)
 	{
-		content = f(lst->content);
+		tmp = aux->next;
+		content = f(aux->content);
 		if (content)
 		{
-			tmp = ft_lstnew(content);
-			if (!tmp)
-			{
-				ft_lstclear(&new_lst, del);
-				return (NULL);
-			}
-			ft_lstadd_back(&new_lst, tmp);
+			aux = ft_lstnew(content);
+			if (!aux)
+				{
+					ft_lstclear(&new_lst, del);
+					del(content);
+				}
+			ft_lstadd_back(&new_lst, aux);
 		}
 		else
 		{
-			del(lst->content);
+			del(aux->content);
+			free(aux);
 		}
-		lst = lst->next;
+		aux = tmp;
 	}
 	return (new_lst);
 }

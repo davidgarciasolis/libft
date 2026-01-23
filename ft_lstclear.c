@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:34:13 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/21 16:09:27 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/23 11:29:58 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,17 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
 
-	while (*lst)
+	if (*lst)
 	{
-		tmp = (*lst)->next;
-		del((*lst)->content);
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			del((*lst)->content);
+			free(*lst);
+			*lst = tmp;
+		}
 		free(*lst);
-		*lst = tmp;
 	}
-	free(lst);
 }
 /*
 int	main(void)
