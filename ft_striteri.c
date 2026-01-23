@@ -12,7 +12,7 @@
 
 #include "libft.h"
 #include <stdio.h>
-
+/*
 void	funcion(unsigned int i, char *c)
 {
 	if (i % 2 == 1)
@@ -22,14 +22,12 @@ void	funcion(unsigned int i, char *c)
 	else
 		*c = ft_tolower(*c);
 }
-
+*/
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	size_t			size;
 
 	i = 0;
-	size = ft_strlen(s);
 	while (s[i] != '\0')
 	{
 		f(i, &s[i]);
