@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:18:10 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 12:25:40 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/24 18:57:53 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	count_word(char const *s, char c)
 
 	x = 0;
 	num_element = 0;
-	while (s[x] == c)
+	while (s[x] && s[x] == c)
 		x++;
 	while (s[x])
 	{
@@ -39,7 +39,7 @@ size_t	stringlen(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != c && s[i] != '\0')
+	while (s[i] != c && s[i])
 	{
 		i++;
 	}
@@ -72,7 +72,7 @@ int	duplicate_word(char	**ptr, char const *s, char c)
 			free_memory_split(ptr, y);
 			return (1);
 		}
-		ft_strlcpy(ptr[y], &s[x], size_word);
+		ft_strlcpy(ptr[y], &s[x], size_word + 1);
 		x += size_word;
 		while (s[x] && s[x] == c)
 			x++;
@@ -86,8 +86,10 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = count_word(s, c);
-	ptr = malloc(i * sizeof(char *) + 1);
+	ptr = malloc((i + 1) * sizeof(char *));
 	if (!ptr)
 		return (NULL);
 	if (duplicate_word(ptr, s, c))
@@ -98,8 +100,8 @@ char	**ft_split(char const *s, char c)
 /*
 int	main(void)
 {
-	char	s[] = "     Hola     mundo    ";
-	char	c = ' ';
+	char	s[] = "\0aa\0bbb";
+	char	c = '\0';
 	char	**ptr;
 	int		i;
 
