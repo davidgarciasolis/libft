@@ -6,13 +6,11 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:29:42 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/23 15:32:30 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/25 10:44:43 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {

@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 10:39:53 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 12:27:31 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/25 10:34:48 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*ptr;
 
+	if (!s || !f)
+		return (NULL);	
 	i = 0;
 	size = ft_strlen(s);
 	ptr = malloc(size + 1);
@@ -38,7 +40,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		return (NULL);
 	}
-	while (i < size +1)
+	while (i < size)
 	{
 		ptr[i] = f(i, s[i]);
 		i++;
