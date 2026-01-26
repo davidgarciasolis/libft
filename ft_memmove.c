@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:21:52 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/25 10:58:47 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:16:57 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	d = (char *)dest;
 	s = (char *)src;
 	if (dest || src)
-	
+	{
 		if (d > s)
 		{
 			while (n > 0)
@@ -32,9 +32,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			}
 		}
 		else
-		{
 			ft_memcpy(dest, src, n);
-		}
+	}
 	else
 		return (NULL);
 	return (dest);

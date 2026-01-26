@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:18:01 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 14:34:54 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:20:40 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	letter;
 
 	letter = (char)c;
@@ -30,9 +30,9 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	}
 	if (s[i] == letter)
-		{
-			return ((char *)&s[i]);
-		}
+	{
+		return ((char *)&s[i]);
+	}
 	return (NULL);
 }
 /*

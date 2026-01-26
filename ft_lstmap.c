@@ -6,19 +6,19 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:29:42 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/25 10:44:43 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 21:30:23 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*tmp;
 	void	*content;
-	
-	if(!lst || !f || !del)
+
+	if (!lst || !f || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)
@@ -35,9 +35,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 			ft_lstadd_back(&new_lst, tmp);
 		}
 		else
-		{
-			del(lst->content);
-		}
+			ft_lstdelone(new_lst, del);
 		lst = lst->next;
 	}
 	return (new_lst);

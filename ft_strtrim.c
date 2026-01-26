@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:21:05 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/24 14:20:16 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 18:56:43 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,17 @@ int	find_end(char const *s1, char const *set)
 	return (end);
 }
 
+char	*generador_nulo(void)
+{
+	char	*ptr;
+
+	ptr = malloc(1);
+	if (!ptr)
+		return (NULL);
+	ptr[0] = '\0';
+	return (ptr);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	x;
@@ -65,15 +76,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*ptr;
 
-	if(!s1 || !set)
+	if (!s1 || !set)
 		return (NULL);
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	if (start == ft_strlen(s1))
 	{
-		ptr = malloc(1);
-		ptr[0] = '\0';
-		return (ptr);
+		return (generador_nulo());
 	}
 	ptr = malloc(end - start + 2);
 	if (!ptr)
@@ -84,14 +93,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		ptr[x] = s1[start + x];
 		x++;
 	}
-	//printf("%d\n", ptr[x]);
 	ptr[x] = '\0';
 	return (ptr);
 }
 /*
 int	main(void)
 {
-	char	s1[] = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	char	s1[] = "   \t  \n\n \t\t  \n\n\nHello \t ";
 	char	set[] = " \n\t";
 	char	*ptr;
 

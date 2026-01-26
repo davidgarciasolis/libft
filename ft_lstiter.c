@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:17:21 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 10:49:41 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:14:23 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*aux;
 	t_list	*tmp;
-	
+
 	aux = lst;
 	while (aux)
 	{

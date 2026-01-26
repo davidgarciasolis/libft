@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 10:39:53 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/25 10:34:48 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:20:18 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*ptr;
 
 	if (!s || !f)
-		return (NULL);	
+		return (NULL);
 	i = 0;
 	size = ft_strlen(s);
 	ptr = malloc(size + 1);

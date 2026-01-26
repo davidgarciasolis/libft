@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 12:17:18 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 17:47:56 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:16:19 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
+	size_t		i;
 	char		*p;
-	char	letter;
+	char		letter;
 
 	i = 0;
 	letter = (char)c;

@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:39:31 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 16:17:53 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 18:21:21 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!ptr)
 		return (NULL);
 	if (start >= ft_strlen(s))
-	{
 		ft_strlcpy(ptr, "", size);
-		return (ptr);
-	}
-	if (size < len)
-	{
+	else if (size < len)
 		ft_strlcpy(ptr, &s[start], size + 1);
-		return (ptr);
-	}
 	else
-	{
 		ft_strlcpy(ptr, &s[start], len + 1);
-		return (ptr);
-	}
+	return (ptr);
 }

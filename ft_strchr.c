@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 10:50:55 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/22 14:37:21 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:18:05 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	if (*s == letter)
-		{
-			return ((char *)s);
-		}
+	{
+		return ((char *)s);
+	}
 	return (NULL);
 }
 /*
