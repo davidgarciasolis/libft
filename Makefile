@@ -6,7 +6,7 @@
 #    By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/19 12:24:40 by davgarc4          #+#    #+#              #
-#    Updated: 2026/01/24 18:29:36 by davgarc4         ###   ########.fr        #
+#    Updated: 2026/01/28 19:02:15 by davgarc4         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
+%.o: %.c libft.h
 	cc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
