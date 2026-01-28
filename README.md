@@ -1,26 +1,12 @@
 *Este proyecto ha sido creado como parte del currículo de 42 por davgarc4.*
 
 
-# libft
+# Descripcion
 
 
 `libft` es una biblioteca en C con funciones útiles reutilizables implementadas desde cero. El objetivo del proyecto es reescribir funciones de la biblioteca estándar de C y crear una base sólida que pueda reutilizarse en futuros proyectos.
 
 Este proyecto forma parte del currículo de 42 y es fundamental para entender el funcionamiento interno de muchas funciones básicas del lenguaje C.
-
----
-
-## 🧠 ¿Qué es este proyecto?
-
-`libft` es una librería estática escrita en C que incluye funciones para:
-
-- Manipulación de memoria
-- Manipulación de strings
-- Comprobación y conversión de caracteres
-- Entrada y salida mediante file descriptors
-- Gestión de listas enlazadas (parte bonus)
-
-La librería resultante puede enlazarse con otros proyectos para reutilizar estas funciones.
 
 ---
 
@@ -32,11 +18,12 @@ El repositorio contiene:
 - `libft.h`
 - Archivos `.c` con la implementación de todas las funciones
 
-## 🛠️ Compilación
+## 🛠️ Intrucciones
 
 Para compilar la librería:
 
 make
+
 ## 📚 Funciones incluidas
 
 ### 🔹 Funciones tipo Libc
@@ -83,7 +70,7 @@ make
 
 ---
 
-### 💠 Funciones Bonus (listas enlazadas)
+### 💠 Funciones listas enlazadas
 
 - `ft_lstnew`
 - `ft_lstadd_front`
