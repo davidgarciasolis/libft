@@ -6,7 +6,7 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 10:39:53 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/26 17:20:18 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:44:59 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
 char	funcion_mapi(unsigned int i, char c)
 {
 	if (i % 2 == 1)
@@ -24,7 +25,7 @@ char	funcion_mapi(unsigned int i, char c)
 		c = ft_tolower(c);
 	return (c);
 }
-
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t			size;

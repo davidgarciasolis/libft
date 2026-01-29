@@ -6,19 +6,19 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:17:21 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/26 17:14:23 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:43:49 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+/*
 void	ft_print(void *s)
 {
 	printf("%s\n", (char *)s);
 }
-
+*/
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*aux;
