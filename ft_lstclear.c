@@ -6,19 +6,19 @@
 /*   By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:34:13 by davgarc4          #+#    #+#             */
-/*   Updated: 2026/01/26 17:14:13 by davgarc4         ###   ########.fr       */
+/*   Updated: 2026/01/31 12:37:29 by davgarc4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+/*
 void	free_memory(void *ptr)
 {
 	free(ptr);
 }
-
+*/
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;

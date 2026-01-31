@@ -6,7 +6,7 @@
 #    By: davgarc4 <davgarc4@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/19 12:24:40 by davgarc4          #+#    #+#              #
-#    Updated: 2026/01/28 19:02:15 by davgarc4         ###   ########.fr        #
+#    Updated: 2026/01/31 12:38:02 by davgarc4         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,8 @@ SRCS = \
 	ft_lstiter.c \
 	ft_lstmap.c
 OBJS = $(SRCS:.c=.o)
+
+bonus: all
 
 all: $(NAME)
 
